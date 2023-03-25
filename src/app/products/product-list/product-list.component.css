@@ -1,0 +1,48 @@
+.products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.products table{
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.products table tr:first-child{
+    background-color: var(--secondary);
+    color: white;
+    
+}
+
+.products table tr:first-child th{
+    padding: 15px;
+}
+
+.products table tr:not(:first-child){
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.products table tr:not(:first-child) td{
+    padding: 15px;
+}
+
+.products table tr:not(:first-child) td:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.products table tr:not(:first-child) td:last-child a{
+    text-decoration: none;
+    color: black;
+}
+
+.products table tr:not(:first-child) td:last-child a span{
+    font-size: 40px;
+}

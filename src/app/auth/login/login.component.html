@@ -1,0 +1,15 @@
+<div class="login">
+    <div class="form">
+        <div class="title">Smartie Estoque</div>
+        <div class="input-field">
+            <p>Email:</p>
+            <input type="email" name="email" [(ngModel)]="user.email">
+        </div>
+        <div class="input-field">
+            <p>Senha:</p>
+            <input type="password" name="password" [(ngModel)]="user.password">
+        </div>
+        <div class="error" *ngIf="error">Erro: {{ error }}</div>
+        <button class="btn" (click)="onLogin()">Entrar</button>
+    </div>
+</div>

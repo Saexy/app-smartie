@@ -1,0 +1,39 @@
+.cards{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.cards .card{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: var(--secondary);
+    color: white;
+    cursor: pointer;
+    padding: 40px;
+    transition: all 0.4s ease-in-out;
+}
+
+.cards .card:hover{
+    background-color: var(--secondary-hover);
+}
+
+.cards .card .title{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.cards .card .description{
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.cards .card .description span{
+    margin-right: 10px;
+}
