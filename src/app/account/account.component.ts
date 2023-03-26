@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContextService } from '../shared/context.service';
 
 @Component({
   selector: 'app-account',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(public contextService: ContextService,
+              private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onLogout(): void {
+    window.localStorage.setItem("token", "")
+    this.router.navigate(["/login"])
   }
 
 }

@@ -1,1 +1,19 @@
 <app-navbar></app-navbar>
+<div class="account">
+    <div class="form">
+        <div class="title">Minha conta</div>
+        <div class="input-field">
+            <p>ID:</p>
+            <input type="text" name="id" [(ngModel)]="contextService.user.id" disabled>
+        </div>
+        <div class="input-field">
+            <p>Nome:</p>
+            <input type="text" name="name" [(ngModel)]="contextService.user.name" disabled>
+        </div>
+        <div class="input-field">
+            <p>Email:</p>
+            <input type="text" name="email" [(ngModel)]="contextService.user.email" disabled>
+        </div>
+        <button class="btn" (click)="onLogout()">Sair da conta</button>
+    </div>
+</div>
