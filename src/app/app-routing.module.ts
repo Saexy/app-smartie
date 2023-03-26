@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductAddComponent } from './products/product-add/product-add.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { AuthGuard } from './shared/auth.guard';
 import { LoggedGuard } from './shared/logged.guard';
@@ -17,7 +19,20 @@ const routes: Routes = [
       },
       {
         path: "products",
-        component: ProductListComponent,
+        children: [
+          {
+            path: "",
+            component: ProductListComponent,
+          },
+          {
+            path: "add",
+            component: ProductAddComponent,
+          },
+          {
+            path: ":id",
+            component: ProductEditComponent,
+          },
+        ]
       },
       {
         path: "stock",

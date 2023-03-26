@@ -1,1 +1,12 @@
-<p>product-add works!</p>
+<app-navbar></app-navbar>
+<div class="product-add">
+    <div class="form">
+        <div class="title">Adicionar Produto</div>
+        <div class="input-field">
+            <p>Nome:</p>
+            <input type="text" name="name" [(ngModel)]="product.name">
+        </div>
+        <div class="error" *ngIf="error">Erro: {{ error }}</div>
+        <button class="btn" (click)="onProductAdd()">Adicionar</button>
+    </div>
+</div>

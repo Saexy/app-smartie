@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../shared/product.model';
+import { ProductService } from '../shared/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.onProductsLoad();
+  }
+
+  onProductsLoad(): void{
+    this.productService.getProducts().toPromise().then((response) => {
+      this.products = response || [];
+    })
+  }
+
+  onProductDelete(id?: number): void {
+    this.productService.deleteProduct(id).toPromise().then((response) => {
+      this.onProductsLoad();
+    })
   }
 
 }

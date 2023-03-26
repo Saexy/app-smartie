@@ -1,4 +1,7 @@
 <app-navbar></app-navbar>
+<div class="actions">
+    <button class="btn" routerLink="/products/add">Criar produto</button>
+</div>
 <div class="products">
     <table>
         <tr>
@@ -6,12 +9,12 @@
             <th>Nome</th>
             <th></th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Produto</td>
+        <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
             <td>
-                <a href="#"><span class="material-symbols-outlined">edit</span></a>
-                <a href="#"><span class="material-symbols-outlined">delete</span></a>
+                <a routerLink="/products/{{product.id}}" ><span class="material-symbols-outlined">edit</span></a>
+                <a (click)="onProductDelete(product.id)"><span class="material-symbols-outlined">delete</span></a>
             </td>
         </tr>
     </table>

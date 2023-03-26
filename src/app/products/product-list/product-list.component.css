@@ -4,6 +4,24 @@
     justify-content: center;
 }
 
+.actions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.actions .btn{
+    padding: 10px 25px;
+    border: 0px;
+    outline: none;
+    background-color: var(--secondary);
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .products table{
     width: 80%;
     border-collapse: collapse;
@@ -41,6 +59,7 @@
 .products table tr:not(:first-child) td:last-child a{
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 
 .products table tr:not(:first-child) td:last-child a span{

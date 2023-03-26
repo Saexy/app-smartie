@@ -1,1 +1,20 @@
-<p>product-edit works!</p>
+<app-navbar></app-navbar>
+<div class="product-edit">
+    <div class="form">
+        <div class="title">Editar Produto</div>
+        <div class="input-field">
+            <p>ID:</p>
+            <input type="number" name="id" [(ngModel)]="product.id" disabled>
+        </div>
+        <div class="input-field">
+            <p>Nome:</p>
+            <input type="text" name="name" [(ngModel)]="product.name">
+        </div>
+        <div class="input-field">
+            <p>Criado em:</p>
+            <input type="text" name="created_at" [(ngModel)]="product.created_at" disabled>
+        </div>
+        <div class="error" *ngIf="error">Erro: {{ error }}</div>
+        <button class="btn" (click)="onProductUpdate()">Salvar</button>
+    </div>
+</div>
