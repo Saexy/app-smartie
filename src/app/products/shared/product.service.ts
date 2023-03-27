@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from './product.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,23 +19,23 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   createProduct(product: Product): Observable<any> {
-    return this.httpClient.post("http://localhost:3333/products", product, this.options);
+    return this.httpClient.post(`${environment.api_url}/products`, product, this.options);
   }
 
   getProducts(): Observable<Product[]>{
-    return this.httpClient.get<Product[]>("http://localhost:3333/products", this.options);
+    return this.httpClient.get<Product[]>(`${environment.api_url}/products`, this.options);
   }
 
   getProduct(id: number): Observable<Product>{
-    return this.httpClient.get<Product>(`http://localhost:3333/products/${id}`, this.options);
+    return this.httpClient.get<Product>(`${environment.api_url}/products/${id}`, this.options);
   }
 
   deleteProduct(id?: number): Observable<any>{
-    return this.httpClient.delete(`http://localhost:3333/products/${id}`, this.options)
+    return this.httpClient.delete(`${environment.api_url}/products/${id}`, this.options)
   }
 
   updateProduct(product: Product): Observable<any> {
-    return this.httpClient.put(`http://localhost:3333/products/${product.id}`, product, this.options)
+    return this.httpClient.put(`${environment.api_url}/products/${product.id}`, product, this.options)
   }
 
 }
