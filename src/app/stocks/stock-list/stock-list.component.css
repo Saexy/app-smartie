@@ -1,4 +1,4 @@
-.products{
+.stocks{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,4 +20,6 @@
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
 }

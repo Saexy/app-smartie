@@ -19,6 +19,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* FORMULÁRIOS PADRÃO */
 .form{
     width: 100%;
     max-width: 720px;
@@ -50,7 +51,7 @@ body{
     margin-bottom: 5px;
 }
 
-.form .input-field input{
+.form .input-field input, select{
     width: 100%;
     height: 50px;
     outline: none;
@@ -84,4 +85,49 @@ body{
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* DATA TABLE */
+.data-table{
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.data-table tr:first-child{
+    background-color: var(--secondary);
+    color: white;
+    
+}
+
+.data-table tr:first-child th{
+    padding: 15px;
+}
+
+.data-table tr:not(:first-child){
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.data-table tr:not(:first-child) td{
+    padding: 15px;
+}
+
+.data-table tr:not(:first-child) td:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.data-table tr:not(:first-child) td:last-child a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.data-table tr:not(:first-child) td:last-child a span{
+    font-size: 40px;
 }

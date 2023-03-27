@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="stock-create">
+    <div class="form">
+        <div class="title">Criar estoque</div>
+        <div class="input-field">
+            <p>Produto:</p>
+            <select name="product_id" [ngModel]="stock.product_id" (ngModelChange)="onStockProductChange($event)">
+                <ng-container *ngFor="let product of products;">
+                    <option value="{{product.id}}" selected="false">{{product.name}}</option>
+                </ng-container>
+            </select>
+        </div>
+        <div class="input-field">
+            <p>Nome:</p>
+            <input type="text" name="name" [(ngModel)]="stock.name" />
+        </div>
+        <div class="error" *ngIf="error">Erro: {{ error }}</div>
+        <button class="btn" (click)="onStockCreate()">Criar</button>
+    </div>
+</div>

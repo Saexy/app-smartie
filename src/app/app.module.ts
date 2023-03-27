@@ -10,7 +10,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AccountComponent } from './account/account.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductAddComponent } from './products/product-add/product-add.component';
-import { ProductEditComponent } from './products/product-edit/product-edit.component'
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { StockListComponent } from './stocks/stock-list/stock-list.component';
+import { StockCreateComponent } from './stocks/stock-create/stock-create.component';
+import { StockEditComponent } from './stocks/stock-edit/stock-edit.component';
+import { StockAddComponent } from './stocks/stock-add/stock-add.component';
+import { StockRemoveComponent } from './stocks/stock-remove/stock-remove.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { ProductEditComponent } from './products/product-edit/product-edit.compo
     AccountComponent,
     ProductListComponent,
     ProductAddComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    StockListComponent,
+    StockCreateComponent,
+    StockEditComponent,
+    StockAddComponent,
+    StockRemoveComponent
   ],
   imports: [
     BrowserModule,

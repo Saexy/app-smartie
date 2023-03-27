@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="actions">
+    <button class="btn" routerLink="/stocks/create">Criar estoque</button>
+    <button class="btn" routerLink="/stocks/add">Adicionar em um estoque</button>
+    <button class="btn" routerLink="/stocks/remove">Remover de um estoque</button>
+</div>
+<div class="stocks">
+    <table class="data-table">
+        <tr>
+            <th>ID</th>
+            <th>Produto</th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let stock of stocks">
+            <td>{{ stock.id }}</td>
+            <td>{{ stock.product_name }}</td>
+            <td>{{ stock.name }}</td>
+            <td>{{ stock.quantity }}</td>
+            <td>
+                <a routerLink="/stocks/{{stock.id}}" ><span class="material-symbols-outlined">edit</span></a>
+                <a (click)="onStockDelete(stock.id)"><span class="material-symbols-outlined">delete</span></a>
+            </td>
+        </tr>
+    </table>
+</div>

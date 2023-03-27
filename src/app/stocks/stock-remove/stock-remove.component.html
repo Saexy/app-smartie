@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="stock-remove">
+    <div class="form">
+        <div class="title">Remover de um estoque</div>
+        <div class="input-field">
+            <p>Estoque:</p>
+            <select name="stock" [ngModel]="stock" (ngModelChange)="onStockChange($event)">
+                <ng-container *ngFor="let stock of stocks;">
+                    <option value="{{stock.id}}" selected="false">{{stock.name}}</option>
+                </ng-container>
+            </select>
+        </div>
+        <div class="input-field">
+            <p>Quantidade:</p>
+            <input type="number" name="quantity" [(ngModel)]="quantity" />
+        </div>
+        <div class="error" *ngIf="error">Erro: {{ error }}</div>
+        <button class="btn" (click)="onStockRemove()">Remover</button>
+    </div>
+</div>

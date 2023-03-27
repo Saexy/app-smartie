@@ -8,6 +8,11 @@ import { ProductEditComponent } from './products/product-edit/product-edit.compo
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { AuthGuard } from './shared/auth.guard';
 import { LoggedGuard } from './shared/logged.guard';
+import { StockAddComponent } from './stocks/stock-add/stock-add.component';
+import { StockCreateComponent } from './stocks/stock-create/stock-create.component';
+import { StockEditComponent } from './stocks/stock-edit/stock-edit.component';
+import { StockListComponent } from './stocks/stock-list/stock-list.component';
+import { StockRemoveComponent } from './stocks/stock-remove/stock-remove.component';
 
 const routes: Routes = [
   {
@@ -35,8 +40,29 @@ const routes: Routes = [
         ]
       },
       {
-        path: "stock",
-        component: DashboardComponent
+        path: "stocks",
+        children: [
+          {
+            path: "",
+            component: StockListComponent,
+          },
+          {
+            path: "create",
+            component: StockCreateComponent,
+          },
+          {
+            path: "add",
+            component: StockAddComponent,
+          },
+          {
+            path: "remove",
+            component: StockRemoveComponent,
+          },
+          {
+            path: ":id",
+            component: StockEditComponent,
+          },
+        ]
       },
       {
         path: "account",

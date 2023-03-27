@@ -26,6 +26,8 @@ export class ProductListComponent implements OnInit {
   onProductDelete(id?: number): void {
     this.productService.deleteProduct(id).toPromise().then((response) => {
       this.onProductsLoad();
+    }).catch((e) => {
+      alert(e.error.msg);
     })
   }
 
